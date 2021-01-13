@@ -15,26 +15,34 @@ public class MyLinkListTest {
 
 	@Test
 	public void createLinkList() {
-		// create first node 70
-		MyLinkList<Integer> firstNode = new MyLinkList<Integer>(70);
+		
+		     // create first node 70
+		MyLinkList<Integer> firstNode = new MyLinkList<Integer>(56);
+		
 		// create second node 30
 		MyLinkList<Integer> secondNode = new MyLinkList<Integer>(30);
+		
 		// create third node 56
-		MyLinkList<Integer> thirdNode = new MyLinkList<Integer>(56);
+		MyLinkList<Integer> thirdNode = new MyLinkList<Integer>(70);
+		
 		// create a object of MyLinkList1 class
 		MyLinkList1 mylinklist = new MyLinkList1();
+		
 		// add first node manually
-		mylinklist.add(firstNode);
+		mylinklist.append(firstNode);
+		
 		// add second node
-		mylinklist.add(secondNode);
+		mylinklist.append(secondNode);
+		
 		// add third node
-		mylinklist.add(thirdNode);
+		mylinklist.append(thirdNode);
+		
 		// print the LinkList sequence like 56->30->70
 		mylinklist.printMyNodes();
-		// check condition our link list is reverse or not
-		boolean result = mylinklist.head.equals(thirdNode) && mylinklist.head.getNext().equals(secondNode)
-				&& mylinklist.tail.equals(firstNode);
-
+		
+		// check condition our link list is in Order or Not.
+		boolean result = mylinklist.head.equals(firstNode) && mylinklist.head.getNext().equals(secondNode)
+				&& mylinklist.tail.equals(thirdNode);
 		Assert.assertTrue(result);
 
 	}

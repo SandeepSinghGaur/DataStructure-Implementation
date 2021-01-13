@@ -4,33 +4,34 @@ import com.linklistdatastructure.INode;
 
 /**
  * @author SandeepSinghGaur
- * @Functionality Create a class and inside class we define two method add()  print()
+ * @Functionality Create a class and inside class we define two method append()
+ *                print()
  */
 
 public class MyLinkList1 {
 	public INode head;
 	public INode tail;
-// Constructor of the class 
+
+	// Constructor of the class
 	public MyLinkList1() {
 		this.head = null;
 		this.tail = null;
 	}
-	// 
 
-	public void add(INode newNode) {
-		if (this.tail == null) {
-			this.tail = newNode;
-		}
+	// Append Node from Tail
+
+	public void append(INode newNode) {
 		if (this.head == null) {
 			this.head = newNode;
-		} else {
-			INode tempNode = this.head;
-			this.head = newNode;
-			this.head.setNext(tempNode);
 		}
-
+		if (this.tail == null) {
+			this.tail = newNode;
+		} else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+		}
 	}
-	// This Method is For Simply traverse the Link List and Print the key value. 
+	// This Method is For Simply traverse the Link List and Print the key value.
 
 	public void printMyNodes() {
 		StringBuffer nodes = new StringBuffer("My Nodes:");
