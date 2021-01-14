@@ -17,19 +17,25 @@ public class MyLinkList1 {
 		this.head = null;
 		this.tail = null;
 	}
+	
+	 public void append(INode myNode) {
+	        if(this.head==null) {
+	            this.head=myNode;
+	        }
+	        if(this.tail==null) {
+	            this.tail=myNode;
+	        } else {
+	            this.tail.setNext(myNode);
+	            this.tail=myNode;
+	        }
+	    }
 
-	// Append Node from Tail
-
-	public void append(INode newNode) {
-		if (this.head == null) {
-			this.head = newNode;
-		}
-		if (this.tail == null) {
-			this.tail = newNode;
-		} else {
-			this.tail.setNext(newNode);
-			this.tail = newNode;
-		}
+	// Insert Node in Middle
+	public void insert(INode myNode,INode newNode)
+	{
+		INode tempNode=myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
 	// This Method is For Simply traverse the Link List and Print the key value.
 

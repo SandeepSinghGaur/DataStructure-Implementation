@@ -27,15 +27,10 @@ public class MyLinkListTest {
 		
 		// create a object of MyLinkList1 class
 		MyLinkList1 mylinklist = new MyLinkList1();
-		
-		// add first node manually
-		mylinklist.append(firstNode);
-		
-		// add second node
-		mylinklist.append(secondNode);
-		
-		// add third node
-		mylinklist.append(thirdNode);
+	
+        mylinklist.append(firstNode);
+        mylinklist.append(thirdNode);
+		mylinklist.insert(firstNode,secondNode);
 		
 		// print the LinkList sequence like 56->30->70
 		mylinklist.printMyNodes();
