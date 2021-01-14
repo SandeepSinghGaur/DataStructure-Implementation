@@ -18,11 +18,17 @@ public class MyLinkList1 {
 		this.tail = null;
 	}
 	// Delete The First Node
-	public void delete()
+	public void deleteLast()
 	{
-		INode temp=this.head;
-		this.head=temp.getNext();
-	}
+	        INode tempNode =head;
+	        while((tempNode.getNext()!=tail)) {
+	            tempNode = tempNode.getNext();
+	        }
+	        this.tail= tempNode;
+	    }
+	      
+	    
+	
 	
 	 public void append(INode myNode) {
 	        if(this.head==null) {
@@ -50,11 +56,10 @@ public class MyLinkList1 {
 		INode tempNode = head;
 		while (tempNode.getNext() != null) {
 			nodes.append(tempNode.getKey());
-			if (!tempNode.equals(tail))
+			if (!tempNode.equals(tail) ) 
 				nodes.append("->");
 			tempNode = tempNode.getNext();
 		}
-		nodes.append(tempNode.getKey());
 		System.out.println(nodes);
 	}
 

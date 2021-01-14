@@ -32,13 +32,13 @@ public class MyLinkListTest {
 		mylinklist.append(secondNode);
 		mylinklist.append(thirdNode);
 		// Delete the First Node
-		mylinklist.delete();
+		mylinklist.deleteLast();
 
-		// print the LinkList sequence like 56->30->70
+		// print the LinkList sequence like 56->30
 		mylinklist.printMyNodes();
 
 		// check condition our link list is in Order or Not.
-		boolean result = mylinklist.head.equals(secondNode) && mylinklist.head.getNext().equals(thirdNode);
+		boolean result = mylinklist.head.equals(firstNode) && mylinklist.head.getNext().equals(secondNode);
 		Assert.assertTrue(result);
 
 	}
