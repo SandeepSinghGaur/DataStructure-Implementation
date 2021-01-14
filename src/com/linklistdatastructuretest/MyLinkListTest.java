@@ -15,29 +15,30 @@ public class MyLinkListTest {
 
 	@Test
 	public void createLinkList() {
-		
-		     // create first node 70
+
+		// create first node 70
 		MyLinkList<Integer> firstNode = new MyLinkList<Integer>(56);
-		
+
 		// create second node 30
 		MyLinkList<Integer> secondNode = new MyLinkList<Integer>(30);
-		
+
 		// create third node 56
 		MyLinkList<Integer> thirdNode = new MyLinkList<Integer>(70);
-		
+
 		// create a object of MyLinkList1 class
 		MyLinkList1 mylinklist = new MyLinkList1();
-	
-        mylinklist.append(firstNode);
-        mylinklist.append(thirdNode);
-		mylinklist.insert(firstNode,secondNode);
-		
+
+		mylinklist.append(firstNode);
+		mylinklist.append(secondNode);
+		mylinklist.append(thirdNode);
+		// Delete the First Node
+		mylinklist.delete();
+
 		// print the LinkList sequence like 56->30->70
 		mylinklist.printMyNodes();
-		
+
 		// check condition our link list is in Order or Not.
-		boolean result = mylinklist.head.equals(firstNode) && mylinklist.head.getNext().equals(secondNode)
-				&& mylinklist.tail.equals(thirdNode);
+		boolean result = mylinklist.head.equals(secondNode) && mylinklist.head.getNext().equals(thirdNode);
 		Assert.assertTrue(result);
 
 	}

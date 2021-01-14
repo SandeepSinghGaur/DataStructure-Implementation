@@ -17,6 +17,12 @@ public class MyLinkList1 {
 		this.head = null;
 		this.tail = null;
 	}
+	// Delete The First Node
+	public void delete()
+	{
+		INode temp=this.head;
+		this.head=temp.getNext();
+	}
 	
 	 public void append(INode myNode) {
 	        if(this.head==null) {
