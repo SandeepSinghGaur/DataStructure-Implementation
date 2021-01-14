@@ -32,7 +32,8 @@ public class MyLinkListTest {
 		mylinklist.append(secondNode);
 		mylinklist.append(thirdNode);
 		// Search the given Node
-		boolean result = mylinklist.searchNode(secondNode);
+		MyLinkList<Integer> fourthNode = new MyLinkList<Integer>(40);
+		boolean result = mylinklist.insertNode(fourthNode, secondNode);
 
 		// print the LinkList sequence like 56->30->70
 		mylinklist.printMyNodes();

@@ -57,10 +57,18 @@ public class MyLinkList1 {
 	}
 
 	// Insert Node in Middle
-	public void insert(INode myNode, INode newNode) {
-		INode tempNode = myNode.getNext();
-		myNode.setNext(newNode);
-		newNode.setNext(tempNode);
+	public boolean insertNode(INode myNode,INode secondNode) {
+		INode tempNode = head;
+		while(tempNode.getNext()!=secondNode.getNext()) {
+			tempNode=tempNode.getNext();
+		}
+		if(tempNode.getKey()==secondNode.getKey())
+		{
+			tempNode=myNode.getNext();
+			myNode=tempNode.getNext().getNext();
+			return true;
+		}
+		return false;
 	}
 	// This Method is For Simply traverse the Link List and Print the key value.
 
